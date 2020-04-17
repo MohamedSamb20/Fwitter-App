@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tweetpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    {% for user in tweet %}
+    <h1>{{user.username }}</h1>
+      <div class="media border p-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Error.svg" alt="Photo error!" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <h4>{{user.first_name}} {{user.last_name}}<small><i>{{tweet.pub_date}}</i></small></h4>
+          <p>{{ tweet.tweet_text }}</p>
+        </div>
+      </div>
+      {{% endfor %}}
+  </body>
+</html>
